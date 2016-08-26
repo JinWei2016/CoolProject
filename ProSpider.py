@@ -56,7 +56,6 @@ def findByYear(location):
 
     
 if __name__=="__main__":
-#     findByProvince()
-    findByYear(1)
+    findByProvince()
     print("HelloWorld")
 
