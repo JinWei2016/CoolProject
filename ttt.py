@@ -43,8 +43,10 @@ def findByYear(location):
         for i in range(len(fur_result)):
             if (i+1)%6==0 and i!=0:
                 Temp_Saver+="&\n"
-            else:
+            elif i%6==0:
                 Temp_Saver=Temp_Saver+"&"+fur_result[i]
+            else:
+                Temp_Saver=Temp_Saver+"&&"+fur_result[i]
         print(Temp_Saver)
         file_name="province/"+str(location)+"&&"+str(Url_Year)+".txt"
         save_in_txt=open(file_name,"w")
@@ -54,6 +56,7 @@ def findByYear(location):
 
     
 if __name__=="__main__":
-    findByProvince()
+#     findByProvince()
+    findByYear(1)
     print("HelloWorld")
 
