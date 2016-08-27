@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -7,20 +7,21 @@
 <title>Insert title here</title>
 </head>
 <body>
-INDEX<br/><br/>
-<a href="<%= request.getContextPath() %>/personalPage.jsp">personalPage</a>
+欢迎来到首页
+</br>
 <% 
 String flag="";
-Object obj = session.getAttribute("flag");
-
+Object obj = session.getAttribute("login_flag");
 if(obj!=null){
-	flag = obj.toString();
+    flag = obj.toString();
 }
-if(flag.equals("login_success")){
-%>
-    <a href="<%=request.getContextPath()%>/logoutServlet">Exit</a>
+if(flag.equals("login_success")){%>
+    <%HttpSession s = request.getSession(); String username = (String)s.getAttribute("username");%>
+    <a href="<%=request.getContextPath()%>/personalPage.jsp"><%=username %></a>
+    <a href="<%=request.getContextPath()%>/logoutServlet">EXIT</a>
 <%}else{%>
-    <a href="<%=request.getContextPath()%>/login.jsp">Login</a>
+    <a href="<%=request.getContextPath()%>/login.jsp">LOGIN</a>
+    <a href="<%=request.getContextPath()%>/register.jsp">REIGISTER</a>
 <%}%>
 </body>
 </html>
