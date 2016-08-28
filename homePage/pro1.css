@@ -1,0 +1,458 @@
+  
+  /*
+  排版大小还存在问题，之后再改
+  */
+  body{
+  	/*overflow-y:hidden;*/
+  }
+/*max-frame为第一屏，frame-2为第二屏*/
+.max-frame{
+background-image:url("p2.jpg");
+background-repeat:no-repeat;
+background-size:105% 100%;
+position: relative;
+overflow: hidden;
+top:0;
+left:0;
+}
+.frame-2{
+
+	 background: url("imgs/pictures4.jpg") no-repeat 50%; 
+	 background-size: cover;
+
+}
+.frame-3{
+	background:url("imgs/cover1.gif") no-repeat 50%;
+    background-size: cover;
+    color:white;
+
+}
+.frame-4{
+	background:url("imgs/cover1.gif") no-repeat 50%;
+	position: relative;
+	background-size: cover;
+
+
+}
+.logo{
+ height:5%;
+ width:100px;
+ float:left;
+}
+
+.max-frame p{
+  text-align:center;
+}
+/*导航栏*/
+ .header1{
+position: fixed;
+
+opacity:0.7;
+top:expression(documentElement.scrollTop + "px"); /* 把导航栏位置放在浏览器垂直滚动条的顶端  关键 */
+  z-index:9999; /* 让导航栏浮在网页的高层位置，遇到flash和图片时候也能始终保持最外层 */
+display: -webkit-box;
+
+    display: -webkit-flex;
+
+    display: -ms-flexbox;
+
+    display: flex;
+
+    width: 100%;
+    height:80px;
+
+    -webkit-box-pack: justify;
+
+    -webkit-justify-content: space-between;
+
+        -ms-flex-pack: justify;
+
+}
+.header1 .navbar
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+}
+ .header1 .nav-1{
+width:272%;
+height:35px;
+margin-bottom: 0;
+}
+.nav-2{
+color:#ffffff;
+}
+.menu1{
+ background-color:#6495ED;
+ font-size: 15px;
+
+}
+.menu3{
+ font-size: 20px;
+ 
+}
+.header1 .navbar .nav > li > a{
+	 
+}
+.menu2{padding: 0;
+	margin:0;
+}
+.drop:hover .menu1 {
+    display: block;
+}
+.max-frame h1{
+
+display:block;
+
+		font-size:24px;
+		margin-top:15%;
+		color:#ffffff;
+		font-weight:normal;
+		line-height:113px;
+		white-space:nowrap;
+		letter-spacing: 2px;
+
+}
+.max-frame p{line-height:50px;
+		font-size:43px;
+		margin: 0;
+		margin-bottom:145px;
+		text-shadow:#52534f 0px 2px 3px;
+		letter-spacing: 15px;
+		color:#ffffff;
+}
+.header1 .navbar .nav > li > a
+{
+    
+   
+}
+.header1 .navbar .nav > li:hover > a
+{
+    capcity:0.3;
+}
+
+.boxInner{
+	width: 77%;
+	min-width: 960px;
+	margin:0 auto 0;
+	z-index:1;
+}
+.boxCtn{
+	position: relative;
+	width: 100%;	
+	
+	padding-bottom:506px;
+}
+.b2_txt_box,.b3_txt_box,.b4_txt_box{
+	position: absolute;
+	left: 0%;
+	color:#ffffff;
+	top:110px;
+}
+.b2_txt,.b3_txt,.b4_txt{
+	font-size: 12px; 
+	font-weight: lighter;
+}
+.b2_txt01{
+	margin-top: 40px;
+	font-size: 24px;
+	opacity: 1;
+	filter:alpha(opacity=0);
+}
+.b2_txt02,.b3_txt02,.b4_txt02{
+	margin-top: 28px; 
+	opacity: 1;
+	filter:alpha(opacity=0);	
+	font-weight: lighter;	
+	font-size: 60px; 
+	line-height: 60px;
+}
+.b2_txt03,.b3_txt03,.b4_txt03{
+	margin-top: 32px;
+	width: 420px;
+	opacity: 1;
+	filter:alpha(opacity=0);
+	font-size: 20px;
+}
+.b2_goin{
+	border:solid;
+	position: absolute;
+	height: 20px;
+	width: :20%;
+	margin-top: 30px;
+}
+.b2_goin:hover{
+	background-color: #B0C4DE
+}
+.b2_pic,.b3_pic,.b4_pic{
+	position: absolute;
+	right: 0%; 
+	top:30px; 
+	height: 536px; 
+	width: 450px;
+}
+
+.button {
+    
+    border: none;
+    width:30%;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px 2px;
+     border-radius: 4px;
+    background-color: transparent;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.button {
+     
+    color: white; 
+    border: 2px solid #008CBA;
+}
+.button:hover {
+    background-color: #008CBA;
+    color: white;
+    opacity:0.45;
+}
+
+/*
+.report,
+.speed,
+.updata,
+.andriow,
+{
+	height: 80px;
+	width: 80px;
+	position: absolute;
+	opacity: 1;
+	filter:alpha(opacity=0);
+}
+	
+}
+/*.b2_pic .report{
+	background:url("imgs/search.png") no-repeat;
+	position: absolute;
+	top:65px;
+	left:-50px;
+	background-position: -20px -20px;
+}
+.b2_pic .speed{
+	background:url("imgs/relation.png") no-repeat;
+	position: absolute;
+	top:106px;
+	right: -66px;
+	background-position: -20px -111px;
+}
+.b2_pic .updata{
+	background:url("imgs/news.png") no-repeat;
+	position: absolute;
+	bottom:110px;
+	left:-100px;
+	background-position: -20px -206px;
+
+}
+.b2_pic .andriow{
+	background:url("imgs/kinsfolk.png") no-repeat;
+	position: absolute;
+	bottom:70px;
+	right: -66px;
+	background-position: -20px -300px;
+
+}*/
+/*动画效果，还有问题*/
+.b2_pic .m-phone{
+	width: 397px;
+	height: 506px;
+	text-align: center;
+	border-radius: 15px;
+	position: relative;
+	opacity: 0;
+	filter:alpha(opacity=0);
+    animation-name:myfirst;
+	animation-duration:3s;
+	animation-timing-function:linear;
+	animation-delay:0s;
+    animation-fill-mode : forwards  
+	/* Safari and Chrome*/
+	-webkit-animation-name:myfirst;
+	-webkit-animation-duration:3s;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-delay:0s;
+	-webkit-animation-fill-mode : forwards  
+
+}
+
+@keyframes myfirst
+{
+	0%   {opacity: 0;}
+	25%  {opacity: 0.25;}
+	50%  {opacity: 0.5;}
+	75%  {opacity: 0.75;}
+	100% {opacity: 1;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+	0%   {opacity: 0;}
+	25%  {opacity: 0.25;}
+	50%  {opacity: 0.5;}
+	75%  {opacity: 0.75;}
+	100% {opacity: 1;}
+}
+.bigbox_3{
+	position: relative;
+	width: 100%;
+	height :600px;
+	margin:0 auto 0;
+	z-index:1;
+	left:0;
+	top: 0;
+
+  
+}
+}
+.f3_header{
+	/*position:relative; 
+	
+	width:90%;
+	height: 200px;
+	text-align: center;
+	margin-top: 100px;
+	padding-top:80px;
+	text-align: center;  
+	font-size: 50px;
+  font-weight: weight;
+  left:30%;
+  top:20%;*/
+}
+
+.f3_list,.f4_list {
+	position: absolute;
+	width:100%;
+	height:420px;
+	top:100px;
+	 text-align: center;
+	
+     top:20%;
+    
+}
+.f3_list{
+	 left:30%;
+}
+
+.f3_list h2{
+	padding-right: 50%;
+}
+.f3_list .img3
+{
+  margin: 5px;
+
+  height: 200px;
+  width: 150px;
+  float:left;
+  border-radius: 4px;
+    background-color: transparent;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+      color: white; 
+    border: 2px solid #008CBA;
+}	
+.f3_list .img3:hover{
+  background-color: #008CBA;
+}
+.bigbox_3 .img3 a{
+	
+  padding-bottom: 20%;
+  top:20%;
+
+}
+.bigbox_3 .img3 img
+{
+	width:100px;
+	height: 100px;
+  display: inline;
+  margin-top: 20px;
+ margin-bottom: 20px;
+  
+  
+}
+
+.bigbox_3 .img3 a:hover img {width:120px;
+	height: 120px;
+text-align: center;}
+.bigbox_3 .desc3
+{
+  text-align: center;
+  font-weight: normal;
+  width: 120px;
+  margin: 2px;
+}
+.button3_1{
+  position: absolute;
+  top:70%;
+  left:10%;
+}
+.f4_list{
+	color: white;
+}
+.f4_list h2{
+	top:-5%;
+}
+.f4_list .img4{
+	margin-left: 14%;
+}
+.f4_list .img4 a{
+	  height: 180px;
+  width: 180px;
+  float:left;
+  border-radius: 50%;
+   margin-left: 5%;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+      color: white; 
+   
+}
+.f4_list .img4 a:hover{
+height: 200px;
+  width: 200px;
+}
+.f4_list .img4 .a4_1
+{
+	 background-color:#1E90FF;
+}
+.f4_list .img4 .a4_2
+{
+	 background-color:#00FF00;
+}
+.f4_list .img4 .a4_3
+{
+	 background-color:#FF4500;
+}
+.f4_list .img4 .a4_4
+{
+	 background-color:#191970;
+}
+.f4_list .img4 img
+{
+	width:64px;
+	height: 64px;
+	margin-top:30%;
+   margin-left:5%;
+   display: inline;
+   
+  
+  
+}
+.button4_1{
+	margin-top: 20%;
+	position: absolute;
+	margin-left: -14%;
+	
+}
