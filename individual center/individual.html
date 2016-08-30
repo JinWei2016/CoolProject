@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>个人中心</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Individual centers, including personal information, favorites, news">
+  <meta name="author" content="bao">
+
+  <!-- Le styles -->
+
+  
+  <link rel="stylesheet" href="http://static.runoob.com/assets/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!--<link href="bootstrap.css" rel="stylesheet">-->
+  <link href="individual.css" rel="stylesheet">
+  <script src="http://static.runoob.com/assets/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://static.runoob.com/assets/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+
+      <!-- Le fav and touch icons -->
+
+    </head>
+    <body>
+      <!--导航栏-->
+      <<div class="navbar navbar-default navbar-fixed-top navbar_1">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="http:" class="navbar-brand" top="4px">Script Eden</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+
+          <ul class="nav navbar-nav">
+            <li><a href="http://www.cssmoban.com//" target="_blank">Home</a></li>
+
+          </ul>
+          <!--把这一部分加到之前的导航栏就行-->
+          <div class="person_1">
+            <a class="pull-right "> &nbsp;卢修明 </a><img class="pull-right img-circle"  src="img/touxiang1.jpg" href="pp" ></img>
+          </div><!--person_1-->
+        </div>
+      </div>
+    </div><!--导航栏--> 
+    
+    <!--流动布局-->
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <!--左边导航栏-->
+        <div class="col-md-3 col-xs-3 col-sm-9">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Frontend</li>
+              <li class="active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">6</a></li>
+              <li class="nav-header">Backend</li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span--><!--左边导航栏-->
+        <!--右边-->
+        <div class="col-md-9 col-xs-9 col-sm-9">
+          <!--右上方-->
+          <div class="leaderboard">
+            <div class="row-fluid">
+             <!--头像-->
+             <img class="img-circle" src="img/touxiang.jpg">&nbsp;&nbsp;&nbsp;
+             <a class="info_1"><span class="name_1">卢修明</span>
+              <small class="place-l">南京</small></a>
+            </div>
+          </div>  <!--右上方-->
+          <!--右下方-->
+          <div class="row-fluid">
+            <div class="col-md-12 col-xs-12 col-sm-9">
+              <div class="content">
+                <!--导航-->
+                <ul id="myTab" class="nav nav-tabs">
+                  <li class="active">
+                    <a href="#home" data-toggle="tab" color="#330000">
+                      个人信息
+                    </a>
+                  </li>
+                  <li><a href="#ios" data-toggle="tab">收藏夹</a></li>
+                  <li class="dropdown">
+                    <a href="#" id="myTabDrop1" class="dropdown-toggle" 
+                    data-toggle="dropdown">消息 <span class="badge">5</span>
+                    <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+                    <li><a href="#jmeter" tabindex="-1" data-toggle="tab">系统消息<span class="badge">2</span></a></li>
+                    <li><a href="#ejb" tabindex="-1" data-toggle="tab">好友消息<span class="badge">3</span></a></li>
+                  </ul>
+                </li>
+              </ul>
+              <!--导航-->
+
+              <div id="myTabContent" class="tab-content">
+                <!--个人信息淡入-->
+                <div class="tab-pane fade in active" id="home">
+
+                  <div class="per_information">
+                   
+                    <p>账 号：1562973</p>
+                    <p>昵 称：llll</p>
+                    <p>个 人：男 20岁</p>
+                    <p>省 份：江苏</p>
+                    <p>高考分数：600</p>
+                    <!--href="#modify_information" data-toggle="tab"-->
+
+                    <button type="button"  class=""
+                    data-toggle="modal" href="#myModal">修改信息</button>
+
+                  </div>
+                </div>
+                <!--个人信息淡入-->
+
+
+
+                <!--收藏夹-->
+                <div class="tab-pane fade favorite_1" id="ios">
+                  <img src="img/favorite-pic.jpg" ></img>
+                  <img src="img/favorite-pic.jpg" ></img>
+                  <!--图片我想要的是单击放大，现在是鼠标移上放大-->
+                </div><!--收藏夹-->
+                <!--系统消息-->
+                <div class="tab-pane fade" id="jmeter">
+                  <!--系统消息内容-->
+                  <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                      <!--系统消息头部-->
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" 
+                          href="#collapseOne">
+                          系统消息
+                        </a>
+                      </h4>
+                    </div><!--系统消息头部-->
+                    <!--系统消息主体-->
+                    <div id="collapseOne" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        智障
+                      </div>
+                    </div><!--系统消息主体-->
+                  </div><!--系统消息内容-->
+                </div><!--系统消息-->
+                <!--好友消息-->
+                <div class="tab-pane fade" id="ejb">
+                 <!--好友消息内容-->
+                 <div class="panel-group" id="accordion">
+                  <div class="panel panel-default">
+                    <!--好友消息头部-->
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" 
+                        href="#collapsetwo">
+                        凌丽阳给您发送了一条消息
+                      </a>
+                    </h4>
+                  </div><!--好友消息头部-->
+                  <!--好友消息主体-->
+                  <div id="collapsetwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      约吗
+                    </div>
+                  </div><!--好友消息主体-->
+                </div><!--好友消息内容-->
+              </div><!--好友消息-->
+            </div>
+
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+      <hr>
+      <footer>
+        <p>&copy; Company 2012</p>
+      </footer>
+
+    </div><!--/.fluid-container--><!--流动布局-->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <!--模态框-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+       <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            &times;
+          </button>
+          <h4 class="modal-title" id="myModalLabel">
+            个人信息更改
+          </h4>
+        </div>
+        <div class="modal-body modal-body_1">
+          <center>
+          <!--暂时设定，根据数据库更改input内容-->
+            <form name="modify" method="post" action="success.html" class="modify-form">
+              昵 称: <input type="text" name="nickname" value="llll"onfocus="if (value =='llll'){value =''}"onblur="if (value ==''){value='llll'}"><br><!--鼠标点击默认值消失,不输入离开鼠标恢复默认值 -->
+
+              省 份: <input type="text" name="province" value="江苏"onfocus="if (value =='江苏'){value =''}"onblur="if (value ==''){value='江苏'}"><br>
+              分 数: <input type="text" name="score" value="分数"onfocus="if (value =='分数'){value =''}"onblur="if (value ==''){value='分数'}"><br>
+              性 别：<input name="rdo" type="radio" id="ridoo" value="0" checked="checked">男
+              <input name="rdo" type="radio" id="ridxx">女<br><br>
+
+            </form>
+          </center>
+        </div>
+        <div class="modal-footer modal-footer_1">
+
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+          </button>
+          <button type="button" class="btn btn-primary">
+            提交更改
+          </button>
+
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+  </div>
+  <!--模态框-->
+
+</body>
+</html>
