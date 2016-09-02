@@ -7,6 +7,7 @@
 <title>Error Page</title>
 </head>
 <body>
+<jsp:include  page="navigator.jsp"/>
 <%
 Object obj = request.getAttribute("msg");
 if(obj!=null){
