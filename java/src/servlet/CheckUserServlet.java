@@ -62,7 +62,7 @@ public class CheckUserServlet extends HttpServlet {
 					rd=request.getRequestDispatcher(returnUrl);
 					rd.forward(request, response);
 				}else{//之前什么也没打开过
-					rd=request.getRequestDispatcher("personalPage.jsp");
+					rd=request.getRequestDispatcher("index.jsp");
 					rd.forward(request, response);
 				}
 			}else{

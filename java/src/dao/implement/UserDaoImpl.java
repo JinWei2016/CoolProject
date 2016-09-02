@@ -24,7 +24,7 @@ public class UserDaoImpl implements UserDao{
 	}
 
 	@Override
-	public boolean update(Connection conn, long id , User user) throws SQLException {
+	public boolean update(Connection conn, int id , User user) throws SQLException {
 		// TODO Auto-generated method stub
 		String updateSql="UPDATE "+tableName+" SET username=?,password=?,email=? WHERE id = ?";
 		PreparedStatement ps = conn.prepareStatement(updateSql);
@@ -39,7 +39,7 @@ public class UserDaoImpl implements UserDao{
 	}
 
 	@Override
-	public boolean delete(Connection conn , long id , User user) throws SQLException {
+	public boolean delete(Connection conn , int id , User user) throws SQLException {
 		// TODO Auto-generated method stub
 		PreparedStatement ps = conn.prepareStatement("DELETE FROM "+tableName+" WHERE id = ?");
 		ps.setLong(1, id);
@@ -65,8 +65,21 @@ public class UserDaoImpl implements UserDao{
 		ps.setString(1, username);
 		ResultSet resultSet=ps.executeQuery();
 		boolean result = resultSet.next();
-		System.out.println(ps.toString());
 		return result;
 	}
-	
+	public ResultSet getUserByName(Connection conn,String username) throws SQLException{
+		PreparedStatement ps = conn.prepareStatement("SELECT * FROM "+tableName+" WHERE username = ? ");
+		ps.setString(1, username);
+		return ps.executeQuery();
+	}
+
+	@Override
+	public ResultSet getIdByName(Connection conn, String username) throws SQLException {
+		// TODO Auto-generated method stub
+		PreparedStatement ps = conn.prepareStatement("SELECT userid FROM "+tableName+" WHERE username = ? ");
+		ps.setString(1, username);
+		ResultSet result=ps.executeQuery();
+		return result;
+	}
+
 }

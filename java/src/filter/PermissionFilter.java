@@ -8,7 +8,6 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -45,8 +44,22 @@ public class PermissionFilter implements Filter {
 		
 		HttpSession session = req.getSession();
 		String flag = (String)session.getAttribute("login_flag");
-		
-		if(servletPath!=null&&(servletPath.equals("/login.jsp")||servletPath.equals("/index.jsp")||servletPath.equals("/checkUserServlet")||servletPath.equals("/404.jsp")||servletPath.equals("/register.jsp")||servletPath.equals("/registerServlet"))){
+		if(servletPath.contains("js")&&!(servletPath.contains("jsp"))){
+			chain.doFilter(request, response);
+		}
+		else if(servletPath.contains("css")){
+			chain.doFilter(request, response);
+		}
+		else if(servletPath.contains(".PNG")||servletPath.contains(".ico")||servletPath.contains(".gif")||servletPath.contains(".css")|| servletPath.contains(".png")|| servletPath.contains(".jpg")|| servletPath.contains("glyphicons")){
+			chain.doFilter(request, response);
+		}
+		else if(servletPath.contains("navigator")||servletPath.contains("image/")){
+			chain.doFilter(request, response);
+		}
+		else if(servletPath.equals("/map.jsp")||servletPath.equals("/bbs.jsp")||servletPath.equals("/recommend.jsp")){
+			chain.doFilter(request, response);
+		}
+		else if(servletPath!=null&&(servletPath.equals("/login.jsp")||servletPath.equals("/index.jsp")||servletPath.equals("/checkUserServlet")||servletPath.equals("/404.jsp")||servletPath.equals("/register.jsp")||servletPath.equals("/registerServlet")||servletPath.equals("/showdata.jsp"))){
 			// pass the request along the filter chain
 			chain.doFilter(request, response);
 		}else{
@@ -58,12 +71,13 @@ public class PermissionFilter implements Filter {
 				RequestDispatcher rd = req.getRequestDispatcher("/login.jsp");
 				rd.forward(req, resp);
 			}else{
+				System.out.println(servletPath+" turn to login");
 				req.setAttribute("msg", "Not logined yet.");
 				req.setAttribute("returnUrl", servletPath);
 				RequestDispatcher rd = req.getRequestDispatcher("/login.jsp");
 				rd.forward(req, resp);
 			}
-		}		
+		}
 	}
 
 	/**
