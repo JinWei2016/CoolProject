@@ -78,22 +78,22 @@
       <h2 align="center">这里输入标题</h2>
       <div class="img4">
        <a target="_blank" href="klematis_big.htm" class="a4_1"><img src="<%=request.getContextPath() %>/image/index/kinsfolk.png" alt="kinsfolk" ></a>
-      <!-- <div class="desc4">添加描述</div>-->
+
      </div>
      <div class="space4"></div>
       <div class="img4">
      <a target="_blank" href="klematis2_big.htm" class="a4_2"><img src="<%=request.getContextPath() %>/image/index/news.png" alt="news" ></a>
-          <!-- <div class="desc4">添加描述</div>-->
+
       </div>
       <div class="space4"></div>
     <div class="img4">
     <a target="_blank" href="klematis3_big.htm" class="a4_3"><img src="<%=request.getContextPath() %>/image/index/search.png" alt="search" ></a>
-         <!-- <div class="desc4">添加描述</div>-->
+
    </div>
    <div class="space4"></div>
      <div class="img4">
     <a target="_blank" href="klematis4_big.htm" class="a4_4"><img src="<%=request.getContextPath() %>/image/index/news.png" alt="news" ></a>
-          <!-- <div class="desc4">添加描述</div>-->
+
     </div>
  
   <div  class="button button4_1" onclick="">进入</div>

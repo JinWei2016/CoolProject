@@ -65,6 +65,14 @@
     <servlet-name>SendPostServlet</servlet-name>
     <url-pattern>/sendPostServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>GetPostServlet</servlet-name>
+    <servlet-class>servlet.GetPostServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetPostServlet</servlet-name>
+    <url-pattern>/getPostServlet</url-pattern>
+  </servlet-mapping>
   <filter>
     <filter-name>PermissionFilter</filter-name>
     <filter-class>filter.PermissionFilter</filter-class>

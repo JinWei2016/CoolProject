@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8" import="java.lang.String"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -42,7 +42,7 @@ if(s.getAttribute("username")!=null)
                 <div class="col-sm-6">
                     <div class="bbs-header__logo">
                         <h1>
-                           <a href="#">1</a>
+                           <a href="bbs.jsp">1</a>
                        </h1>
                         <small>&nbsp;&nbsp;发布帖子</small>
                     </div>
@@ -50,14 +50,13 @@ if(s.getAttribute("username")!=null)
                 <div class="col-sm-6 text-right text-right-self">
                     <ul class="opts list-inline hidden-xs text-right-self" >
                         <li class="opts__item dropdown hoverDropdown write-btns">
-                            <a class="dropdownBtn personal" data-toggle="dropdown" href="/ask">个人中心<span class="caret"></span></a>
+                            <a class="dropdownBtn personal" data-toggle="dropdown" href="/ask"><%=username %><span class="caret"></span></a>
                             <ul class="dropdown-menu dropdown-menu-right ">
-                                <li>
-                                    <a href="<%=request.getContextPath()%>/personalPage.jsp">私信</a>
-                                </li>
-                                <li>
-                                    <a href="<%=request.getContextPath()%>/personalPage.jsp">系统消息</a>
-                                </li>
+                                <li><a href="<%=request.getContextPath()%>/personalPage.jsp" class="mya">个人中心</a></li>
+                                <li><a href="<%=request.getContextPath()%>/myfavorite.jsp" class="mya">收藏夹</a></li>
+                                <li><a href="<%=request.getContextPath()%>/message.jsp" class="mya">消息中心</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="<%=request.getContextPath()%>/logoutServlet" class="mya">退出</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -262,6 +261,39 @@ if(s.getAttribute("username")!=null)
             </form>
         </div>
     </div>
+    
+    
+    <div class="modal fade" id= "modal1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">操作提示</h4>
+      </div>
+      <div class="modal-body">
+        <p>发布成功&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="trans()">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id= "modal2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">操作提示</h4>
+      </div>
+      <div class="modal-body">
+        <p>发布失败&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">返回</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 <script>
 function legal(){
@@ -270,7 +302,6 @@ function legal(){
     return true;
 }
 function postSubmit() {
-    console.log('saving');
     if(legal()){
         var content = $('#summernote').summernote('code');
         console.log('content ok');
@@ -291,7 +322,6 @@ function postSubmit() {
             xmlHttpRequest.open("POST", "sendPostServlet?"+action, true);  
             //关联好ajax的回调函数  
             xmlHttpRequest.onreadystatechange = ajaxCall;  
-              
             //真正向服务器发送请求  
             xmlHttpRequest.send(); 
         }
@@ -299,27 +329,28 @@ function postSubmit() {
         //弹出消息提示框，tag不符合标准
         
         
+        
+        
     }
 }        
 function ajaxCall() {  
     if(xmlHttpRequest.readyState == 4 ) {       //完全得到服务器的响应  
         if(xmlHttpRequest.status == 200) {      //没有异常  
-            console.log("save complete.");
-            window.location.href="bbs.jsp";
             var result=xmlHttpRequest.responseText;
             if(result=="succeeded"){
                 //消息提示
-                
+                $('#modal1').modal('show')
                 //跳转
-                //window.location.href="bbs.jsp";
             }else if(result=="failed"){
                 //消息提示框
-                
-                
+                $('#modal2').modal('show')
             }
         }  
     }  
-} 
+}
+function trans(){
+	window.location.href="bbs.jsp";
+}
 </script>
 <script>
 $(document).ready(function() {
