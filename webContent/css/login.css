@@ -1,0 +1,31 @@
+@CHARSET "UTF-8";
+body{
+	over-flow:hidden;
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-image:url('../image/register/registerBackground.jpg');
+}
+.content{
+	padding-top:3%;
+	width:30%;
+	position:absolute;
+	left:35%;
+}
+.btn-self{
+	width:50%;
+}
+.formBtn{
+	text-align: center;
+	padding-top:2%;
+}
+.myLabel{
+	font-size:20px;
+}
+.verifyInput{
+	float:left;
+	width:49.5%;
+}
+.verifyPic{
+	float:right;
+	width:49.5%;
+}
