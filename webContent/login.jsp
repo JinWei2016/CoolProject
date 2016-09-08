@@ -9,6 +9,16 @@
 </head>
 <body>
 <jsp:include  page="navigator.jsp"/>
+<%
+String flag="";
+Object obj = session.getAttribute("login_flag");
+if(obj!=null){
+    flag = obj.toString();
+}
+if(flag.equals("login_success")){
+	response.sendRedirect("personalPage.jsp");
+}
+%>
 <%if(request.getAttribute("msg")!=null){%>
 	<div>
 	   <%=request.getAttribute("msg")%>
@@ -17,6 +27,8 @@
 <div class= "content">
     <form action="<%= request.getContextPath() %>/checkUserServlet" method="post" name="loginForm" class="form-horizontal" role="form">
         <%
+        if(request.getAttribute("returnUrl")!=null)
+            System.out.println(request.getAttribute("returnUrl").toString());
         if(request.getAttribute("returnUrl")!=null){%>
             <input type = 'hidden' name ='returnUrl' value=<%=request.getAttribute("returnUrl") %>>
         <%
@@ -42,7 +54,8 @@
          </div>
          
          <div class="verifyPic">
-            <input type="text" class="form-control" id="verify" placeholder="验证码">
+            <img src="verifyCodeServlet" alt="验证码" name="checkImg" id="checkImg" style="position:relative; top:5px; left:20px;" 
+            onClick="document.getElementById('checkImg').src='verifyCodeServlet?temp='+ (new Date().getTime().toString(36)); return false"/>
          </div>
          </div>
        </div>
@@ -58,6 +71,10 @@
 
 <script type = "text/javascript">
 function check(){
+	if(document.getElementById("verify").value==""){
+		document.getElementById("verify").placeholder="验证码不可为空";
+		return false;
+	}
     if(document.getElementById("username").value==""){
         document.getElementById("username").placeholder="不能为空";
         return false;
